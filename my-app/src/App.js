@@ -11,8 +11,8 @@ import { Route, Routes } from 'react-router-dom';
 function App() {
 
 
-  const [mode, setMode] = useState('light')   //whether it has default mode
-  const [alert, setAlert] = useState(null)  //to set alert 
+  const [mode, setMode] = useState('light')  
+  const [alert, setAlert] = useState(null)   
 
   // function to change the mode  
   const toggleMode = () => {
@@ -28,7 +28,7 @@ function App() {
 
     }
   }
-  //function to set alert 
+  
 
    const showAlert = (message, type) => {
      setAlert({
@@ -44,30 +44,15 @@ function App() {
 
   return (
     <>
-      {/* Navbar  */}
       <Navbar title="TextCounter" AboutText="About TextCounter" mode={mode} toggleMode={toggleMode} />
-      {/* alert  */}
       <Alert alert={alert} />
       
-        {/* to deploy on github page we need to comment the router related process */}
         <div className="container my-3">
           <Routes>
             <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextCounter - word counter, character counter, remove extra spaces" mode={mode} />} />
             <Route  exact path='about' element={<About mode={mode}/>}/>
           </Routes>
-        </div>
-       
-        
-      
-
-       
-     {/* Textform 
-      <div className="container my-3">
-        <TextForm showAlert={showAlert}  heading="Enter the Text To Analyze." mode={mode} />
-      </div>
- */}
-       {/* about us 
-      <About/>   */}
+        </div>  
 
     </>
   );

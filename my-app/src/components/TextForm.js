@@ -35,8 +35,6 @@ export default function TextForm(props) {
       setText(newText.join(" "))
     }
   const [text, setText] = useState("")
-  // Text="new Text"  //wrong way to set text
-  // setText=("new Text")  //correct way to set text
   return (
     <>
     <div className="container" style={{color:props.mode ==='dark'?'white':'#042743'}}>
